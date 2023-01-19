@@ -57,5 +57,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </include>
     </group>
     
+      <!-- root_camera_link is a root link coincident with the base link, ise needed because the camera requires  -->
+    <node pkg="tf" type="static_transform_publisher" name="world_to_base_link" args="0.   0. 0. 0. -0.35 0.  base_link  world     10" />
+    
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find zed_wrapper)/cfg/conf.rviz -f base_link" if="$(arg rviz)"/>
 </launch>
