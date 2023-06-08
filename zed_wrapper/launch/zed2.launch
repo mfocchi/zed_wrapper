@@ -62,8 +62,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </include>
     </group>
     
-      <!-- root_camera_link is a root link coincident with the base link, ise needed because the camera requires  -->
-    <node pkg="tf" type="static_transform_publisher" name="world_to_base_link" args="0.90331147  -0.22947563 0.48998522 0.042  -0.52 0.138  root_camera_frame  base_link     10" />
+      <!-- root_camera_link is a link attached to the camera, we need to publish the TF (put numbers changed in sign wrt the ones obtained with rosrun zed_wrapper camera_calibration.py  -->
+    <node pkg="tf" type="static_transform_publisher" name="world_to_base_link" args="1.00689257  -0.21422226 0.34962005 -0.02216 -0.40428 0.0211  root_camera_frame  base_link     1" />
     
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find zed_wrapper)/cfg/conf.rviz -f base_link" if="$(arg rviz)"/>
 </launch>
